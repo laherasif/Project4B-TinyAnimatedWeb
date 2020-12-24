@@ -1,11 +1,11 @@
-import React , { useRef , useEffect } from 'react';
+import React  from 'react';
 
-import sound from './sound/airplane-fly-by-01a.mp3'
+// import sound from './sound/airplane-fly-by-01a.mp3'
 import useWebAnimations from "@wellyshen/use-web-animations";
 
 function Content() {
 
-    const { ref , playState } = useWebAnimations({
+    const { ref  } = useWebAnimations({
         
         keyframes: [
             { transform: 'translate(0, 0)' },
@@ -14,25 +14,23 @@ function Content() {
          ],
           timing: {
             iterations: Infinity,
-            duration: 10000,
+            duration: 15000,
           }
     });
     
-    console.log("pl" , playState)
 
-   const correctSound = useRef()
-        useEffect(()=>{
-            if (correctSound.current !== null) {
-                correctSound.current.play()
-              }
-        },[])
+//    const correctSound = useRef()
+//         useEffect(()=>{
+//             if (correctSound.current !== null) {
+//                 correctSound.current.play()
+//               }
+//         },[])
     return (
         <div>
-            <button onClick = {() => correctSound.current.play()}>Play</button>
-            <audio ref={correctSound} src={sound}></audio>
+            {/* <button onClick = {() => correctSound.current.play()}>Play</button>
+            <audio ref={correctSound} src={sound}></audio> */}
+
             <div className="sky">
-               
-                
                 <div className='trees'>
                     <img src='images/dsfsdf.jpg' alt='trees' />
                 </div>
